@@ -18,9 +18,8 @@ do
     curl -O https://raw.githubusercontent.com/caiuafranca/dados_curso/main/$table.csv
     #Inserir no docker hdfs
     hdfs dfs -mkdir /datalake/raw/$table
-    hdfs dfs -chmod 777 /datalake/raw/table
+    hdfs dfs -chmod 777 /datalake/raw/$table
     hdfs dfs -copyFromLocal $table.csv /datalake/raw/$table
-    exit
     cd ..
 done
 
